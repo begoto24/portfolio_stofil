@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Web</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" 
+  integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" 
+  crossorigin="anonymous" 
+  referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <h4>STOFIL <span>Designer</span></h4>
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav class="navbar" id="navbar">
+      <a href="#home"><span>Home</span></a>
+      <a href="#skills">Skill</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- SECTION HOME -->
+    <section class="home" id="home">
+      <div class="left_right">
+        <div class="left">
+          <span class="small-text">WHO AM I?</span>
+          <h1 class="main-title">I'm Designer UX</h1>
+          <p class="descrip">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis voluptatem tenetur, ullam, ex molestiae nostrum ipsum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum numquam mollitia exercitationem officiis! Odit reiciendis veniam, est, quaerat soluta culpa aliquam quia nobis quas porro at similique corporis quam vel?</p>
+          <div class="buttons">
+            <a href="https://wa.me/237688084974" target="_blank" class="btn-main">Contact moi</a>
+            <a href="#" class="btn-main">see more...</a>
+          </div>
+        </div>
+        <div class="right">
+          <img src="profil-stofil-removebg-preview.png" alt="photo de profil">
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SKILLS -->
+    <section class="skills-section" id="skills">
+      <h2>Skills</h2>
+      <p class="description">Lorem ipsum dolor sit amet consectetur. Imperdiet convallis blandit felis ligula aliquam</p>
+
+      <div class="skills-container">
+        <div class="skill">
+          <div class="circle" data-percent="100">
+            <div class="inner"><i class="fab fa-figma"></i></div>
+          </div>
+          <p class="percent">100%</p>
+          <p class="label">Figma</p>
+        </div>
+
+        <div class="skill">
+          <div class="circle" data-percent="100">
+            <div class="inner"><i class="fab fa-html5"></i></div>
+          </div>
+          <p class="percent">100%</p>
+          <p class="label">HTML</p>
+        </div>
+
+        <div class="skill">
+          <div class="circle" data-percent="85">
+            <div class="inner"><i class="fab fa-css3"></i></div>
+          </div>
+          <p class="percent">85%</p>
+          <p class="label">CSS</p>
+        </div>
+
+        <div class="skill">
+          <div class="circle" data-percent="60">
+            <div class="inner"><i class="fab fa-js"></i></div>
+          </div>
+          <p class="percent">60%</p>
+          <p class="label">JavaScript</p>
+        </div>
+
+        <div class="skill">
+          <div class="circle" data-percent="70">
+            <div class="inner"><i class="fab fa-bootstrap"></i></div>
+          </div>
+          <p class="percent">70%</p>
+          <p class="label">les frame works...</p>
+        </div>
+
+        <div class="skill">
+          <div class="circle" data-percent="70">
+            <div class="inner"><i class="fab fa-robot"></i></div>
+          </div>
+          <p class="percent">70%</p>
+          <p class="label">Intelligence Artificielle...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION SERVICES -->
+    <section class="services" id="services">
+      <div class="services-container">
+        <h2>Services</h2>
+        <p class="description">Lorem ipsum dolor sit amet consectetur. Imperdiet convallis blandit felis ligula aliquam</p>
+
+        <div class="cards">
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>App Design</h3>
+            <p>Lorem ipsum dolor sit amet. Imperdiet Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Web UI</h3>
+            <p>Lorem ipsum dolor sit amet. Imperdiet Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Consulting</h3>
+            <p>Lorem ipsum dolor sit amet. Imperdiet Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Brand Design</h3>
+            <p>Lorem ipsum dolor sit amet. Imperdiet Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Mobile UX</h3>
+            <p>Lorem ipsum dolor sit amet. Imperdiet Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+          <div class="card">
+            <i class="fas fa-users"></i>
+            <h3>Graphic Design</h3>
+            <p>Lorem ipsum dolor sit amet. Imperdiet Lorem ipsum dolor sit amet consectetur</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION CONTACT -->
+    <section class="contact-section" id="contact">
+      <h2>Contact me</h2>
+      <p>Cultivating Connections: Reach Out And Connect With Me</p>
+      <form class="contact-form">
+        <div class="form-group">
+          <label><input type="text" name="name" placeholder="Name" required /></label>
+          <label><input type="email" name="email" placeholder="Email" required /></label>
+        </div>
+        <div class="form-group">
+          <label><input type="text" name="phone" placeholder="Phone Number" /></label>
+          <label>
+            <select name="service">
+              <option selected disabled>Service Of Interest</option>
+              <option>Web Design</option>
+              <option>Development</option>
+              <option>Consultation</option>
+            </select>
+          </label>
+        </div>
+        <div class="form-group">
+          <label><input type="text" name="timeline" placeholder="Timeline" /></label>
+          <label><textarea name="details" placeholder="Project Details..." rows="4"></textarea></label>
+        </div>
+        <button type="submit">Send</button>
+
+        <div id="confirmation" class="confirmation-message">✅ Message envoyé avec succès !</div>
+
+      </form>
+    </section>
+  </main>
+
+  <!-- SECTION FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <h2 class="logo">LOGO</h2>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#">About me</a>
+        <a href="#">Portfolio</a>
+        <a href="#contact">Contact me</a>
+      </nav>
+      <div class="footer-icons">
+        <span>🔗</span>
+        <span>🔗</span>
+        <span>🔗</span>
+      </div>
+      <div class="footer-contact">
+        <p>begotostofil@gmail.com</p>
+        <p>+237 688 08 49 74</p>
+      </div>
+      <div class="footer-socials">
+        <span><a href="https://github.com/begoto24"><i class="fa-brands fa-github"></i></a></span>
+        <span><a href="#"><i class="fa-brands fa-facebook"></i></a></span>
+        <span><a href="https://www.youtube.com/@PrincestofilBegoto"><i class="fa-brands fa-youtube"></i></a></span>
+        <span><a href="https://www.figma.com/files/team/1402600104415020898/user/1402600102401319811?fuid=1402600102401319811"><i class="fa-brands fa-figma"></i></a></span>
+      </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-up">
+      <a href="#" class="scroll-top" id="scrollTopBtn" title="Retour en haut"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+
+  <!-- Firebase SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBxWBuPis48tl2JjvYzxgW4Li5ucKVs3TA",
+    authDomain: "stofil-portfolio.firebaseapp.com",
+    projectId: "stofil-portfolio",
+    storageBucket: "stofil-portfolio.appspot.com",
+    messagingSenderId: "660848527089",
+    appId: "1:660848527089:web:54b5bac6a965a1ba5a0b50"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  const form = document.querySelector('.contact-form');
+  const confirmation = document.getElementById('confirmation');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector('input[name="name"]').value;
+    const email = form.querySelector('input[name="email"]').value;
+    const phone = form.querySelector('input[name="phone"]').value;
+    const service = form.querySelector('select[name="service"]').value;
+    const timeline = form.querySelector('input[name="timeline"]').value;
+    const details = form.querySelector('textarea[name="details"]').value;
+
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        phone,
+        service,
+        timeline,
+        details,
+        date: new Date().toISOString()
+      });
+
+      // Affiche un message de confirmation animé
+      if (confirmation) {
+        confirmation.style.display = 'block';
+        setTimeout(() => confirmation.style.display = 'none', 4000);
+      }
+
+      form.reset();
+    } catch (error) {
+      alert("Erreur lors de l'envoi : " + error.message);
+    }
+  });
+</script>
+
+
+  <!-- js -->
+<script src="script.js"></script>
+
+</body>
+</html>
