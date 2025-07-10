@@ -525,13 +525,45 @@ button[type="submit"] {
   cursor: pointer;
   border-radius: 4px;
   transition: background 0.3s;
+  z-index: 10;
+  position: relative;
 }
 
 button[type="submit"]:hover {
   background-color: #333;
 }
+.popup-success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1.2rem;
+  display: none;
+  z-index: 9999;
+  text-align: center;
+  animation: fadeInOut 4s ease-in-out;
+}
 
-.confirmation-message {
+.popup-success i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }
+  10% { opacity: 1; transform: scale(1) translate(-50%, -50%); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: scale(0.8) translate(-50%, -50%); }
+}
+
+
+/*.confirmation-message {
   display: none;
   background-color: #00cc66;
   color: white;
@@ -551,7 +583,7 @@ button[type="submit"]:hover {
   10%  { opacity: 1; transform: translateY(0); }
   90%  { opacity: 1; transform: translateY(0); }
   100% { opacity: 0; transform: translateY(-10px); }
-}
+}*/
 
 
 /* Footer */

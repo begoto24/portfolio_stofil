@@ -145,35 +145,41 @@
     </section>
 
     <!-- SECTION CONTACT -->
-    <section class="contact-section" id="contact">
-      <h2>Contact me</h2>
-      <p>Cultivating Connections: Reach Out And Connect With Me</p>
-      <form class="contact-form">
-        <div class="form-group">
-          <label><input type="text" name="name" placeholder="Name" required /></label>
-          <label><input type="email" name="email" placeholder="Email" required /></label>
-        </div>
-        <div class="form-group">
-          <label><input type="text" name="phone" placeholder="Phone Number" /></label>
-          <label>
-            <select name="service">
-              <option selected disabled>Service Of Interest</option>
-              <option>Web Design</option>
-              <option>Development</option>
-              <option>Consultation</option>
-            </select>
-          </label>
-        </div>
-        <div class="form-group">
-          <label><input type="text" name="timeline" placeholder="Timeline" /></label>
-          <label><textarea name="details" placeholder="Project Details..." rows="4"></textarea></label>
-        </div>
-        <button type="submit">Send</button>
+<section class="contact-section" id="contact">
+  <h2>Contact me</h2>
+  <p>Cultivating Connections: Reach Out And Connect With Me</p>
 
-        <div id="confirmation" class="confirmation-message">✅ Message envoyé avec succès !</div>
+  <form class="contact-form">
+    <div class="form-group">
+      <input type="text" name="name" placeholder="Name" required />
+      <input type="email" name="email" placeholder="Email" required />
+    </div>
 
-      </form>
-    </section>
+    <div class="form-group">
+      <input type="text" name="phone" placeholder="Phone Number" />
+      <select name="service">
+        <option selected disabled>Service Of Interest</option>
+        <option>Web Design</option>
+        <option>Development</option>
+        <option>Consultation</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <input type="text" name="timeline" placeholder="Timeline" />
+      <textarea name="details" placeholder="Project Details..." rows="4"></textarea>
+    </div>
+
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<!-- POPUP SUCCESS -->
+<div id="popup-success" class="popup-success">
+  <i class="fa fa-check-circle"></i>
+  <p>Message envoyé avec succès !</p>
+</div>
+
   </main>
 
   <!-- SECTION FOOTER -->
@@ -210,8 +216,7 @@
     </div>
   </footer>
 
-  <!-- Firebase SDK -->
-<script type="module">
+  <script type="module">
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
   import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
@@ -227,42 +232,49 @@
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
 
-  const form = document.querySelector('.contact-form');
-  const confirmation = document.getElementById('confirmation');
+  //  On attend que tout le DOM soit chargé avant d'agir
+  window.addEventListener('DOMContentLoaded', () => {
+    const form = document.querySelector('.contact-form');
+    const popup = document.getElementById('popup-success');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+    //  Masquer la popup au cas où elle serait encore visible (ex: rechargement)
+    popup.style.display = 'none';
 
-    const name = form.querySelector('input[name="name"]').value;
-    const email = form.querySelector('input[name="email"]').value;
-    const phone = form.querySelector('input[name="phone"]').value;
-    const service = form.querySelector('select[name="service"]').value;
-    const timeline = form.querySelector('input[name="timeline"]').value;
-    const details = form.querySelector('textarea[name="details"]').value;
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    try {
-      await addDoc(collection(db, "contacts"), {
-        name,
-        email,
-        phone,
-        service,
-        timeline,
-        details,
-        date: new Date().toISOString()
-      });
+      const name = form.querySelector('input[name="name"]').value;
+      const email = form.querySelector('input[name="email"]').value;
+      const phone = form.querySelector('input[name="phone"]').value;
+      const service = form.querySelector('select[name="service"]').value;
+      const timeline = form.querySelector('input[name="timeline"]').value;
+      const details = form.querySelector('textarea[name="details"]').value;
 
-      // Affiche un message de confirmation animé
-      if (confirmation) {
-        confirmation.style.display = 'block';
-        setTimeout(() => confirmation.style.display = 'none', 4000);
+      try {
+        await addDoc(collection(db, "contacts"), {
+          name,
+          email,
+          phone,
+          service,
+          timeline,
+          details,
+          date: new Date().toISOString()
+        });
+
+        popup.style.display = 'block';
+        setTimeout(() => {
+          popup.style.display = 'none';
+        }, 4000);
+
+        form.reset();
+
+      } catch (error) {
+        alert("Erreur lors de l'envoi : " + error.message);
       }
-
-      form.reset();
-    } catch (error) {
-      alert("Erreur lors de l'envoi : " + error.message);
-    }
+    });
   });
 </script>
+
 
 
   <!-- js -->

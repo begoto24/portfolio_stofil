@@ -41,11 +41,10 @@ window.addEventListener("scroll", function () {
 });
 
 
-// Après ajout réussi dans Firestore
-const confirmation = document.getElementById('confirmation');
-confirmation.style.display = 'block';
-
-// Masquer après 4 secondes
-setTimeout(() => {
-  confirmation.style.display = 'none';
-}, 4000);
+const popup = document.getElementById('popup-success');
+if (popup) {
+  popup.style.display = 'block';
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 4000);
+}
